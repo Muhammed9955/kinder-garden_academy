@@ -1,6 +1,12 @@
 "use client";
 
-import ContactMap from "./ContactMap";
+// import ContactMap from "./ContactMap";
+
+// 👉 wrap Map component dynamically
+import dynamic from "next/dynamic";
+const ContactMap = dynamic(() => import("./ContactMap"), {
+  ssr: false, // ❌ disable server-side rendering
+});
 
 export default function ContactSection() {
   return (
