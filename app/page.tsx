@@ -1,103 +1,188 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Book,
+  Users,
+  Brain,
+  Activity,
+  Pencil,
+  BookOpenText,
+  Menu,
+  X,
+} from "lucide-react";
 import Image from "next/image";
+import ContactSection from "./ContactSection";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const services = [
+    {
+      icon: <Book className="w-8 h-8 mx-auto mb-4 text-blue-500" />,
+      title: "تأسيس للمدارس",
+      desc: "لغات / أزهري / دولي",
+    },
+    {
+      icon: <Pencil className="w-8 h-8 mx-auto mb-4 text-yellow-500" />,
+      title: "كورسات",
+      desc: "فونتكس / نور بيان / أونلاين",
+    },
+    {
+      icon: <Users className="w-8 h-8 mx-auto mb-4 text-green-500" />,
+      title: "جلسات",
+      desc: "تخاطب وتعديل سلوك",
+    },
+    {
+      icon: <Activity className="w-8 h-8 mx-auto mb-4 text-red-500" />,
+      title: "مهارات",
+      desc: "تنمية وصعوبات تعلم",
+    },
+    {
+      icon: <Brain className="w-8 h-8 mx-auto mb-4 text-purple-500" />,
+      title: "اختبارات ذكاء",
+      desc: "IQ Test للأطفال",
+    },
+    {
+      icon: <BookOpenText className="w-8 h-8 mx-auto mb-4 text-teal-500" />,
+      title: "أنشطة إضافية",
+      desc: "تعليم رسم / تحفيظ قرآن / استضافة",
+    },
+  ];
+
+  // const galleryImages = [
+  //   "https://images.pexels.com/photos/861308/pexels-photo-861308.jpeg",
+  //   "https://images.pexels.com/photos/1720187/pexels-photo-1720187.jpeg",
+  //   "https://images.pexels.com/photos/1250722/pexels-photo-1250722.jpeg",
+  //   "https://images.pexels.com/photos/1609460/pexels-photo-1609460.jpeg",
+  //   "https://images.pexels.com/photos/936120/pexels-photo-936120.jpeg",
+  // ];
+  const galleryImages = [
+    "/images/activity1.webp",
+    "/images/activity2.jpg",
+    "/images/activity3.jpg",
+    "/images/activity4.png",
+    "/images/activity5.jpg",
+    "/images/activity6.jpg",
+  ];
+
+  return (
+    <div dir="rtl" className="min-h-screen flex flex-col font-sans">
+      {/* Navbar */}
+      <nav className="flex justify-between items-center p-4 shadow-md bg-white sticky top-0 z-50">
+        <h1 className="text-lg md:text-xl font-bold text-blue-600">
+          Kinder Garden Academy{" "}
+        </h1>
+        <div className="hidden md:flex gap-6 text-sm md:text-base">
+          <Link href="#about">من نحن</Link>
+          <Link href="#services">خدماتنا</Link>
+          <Link href="#gallery">أنشطتنا</Link>
+          <Link href="#contact">تواصل معنا</Link>
+          {/* <Link href="#enroll">التسجيل</Link> */}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </nav>
+
+      {menuOpen && (
+        <div className="flex flex-col bg-white shadow-md md:hidden px-6 py-4 space-y-4">
+          <Link href="#about" onClick={() => setMenuOpen(false)}>
+            من نحن
+          </Link>
+          <Link href="#services" onClick={() => setMenuOpen(false)}>
+            خدماتنا
+          </Link>
+          <Link href="#gallery" onClick={() => setMenuOpen(false)}>
+            أنشطتنا
+          </Link>
+          <Link href="#contact" onClick={() => setMenuOpen(false)}>
+            تواصل معنا
+          </Link>
+          {/* <Link href="#enroll" onClick={() => setMenuOpen(false)}>
+            التسجيل
+          </Link> */}
+        </div>
+      )}
+
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="flex flex-col items-center justify-center text-center py-20 px-6 bg-gradient-to-r from-blue-50 to-yellow-50"
+      >
+        <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
+          نؤسس أجيال المستقبل
+        </h2>
+        <p className="text-base md:text-lg text-gray-600 mb-6 max-w-xl">
+          أكاديمية متكاملة لتأسيس الأطفال لجميع المراحل التعليمية مع أنشطة
+          وبرامج مميزة.
+        </p>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <Button asChild>
+            <Link href="#enroll">سجّل الآن</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="#contact">تواصل معنا</Link>
+          </Button>
+        </div>
+      </motion.section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 px-6 md:px-20 bg-gray-50">
+        <h3 className="text-2xl font-bold text-center mb-12">خدماتنا</h3>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <Card className="shadow-sm hover:shadow-md transition rounded-2xl">
+                <CardContent className="p-6 text-center">
+                  {service.icon}
+                  <h4 className="font-bold text-lg mb-2">{service.title}</h4>
+                  <p className="text-gray-600 text-sm">{service.desc}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-16 px-6 md:px-20 bg-white">
+        <h3 className="text-2xl font-bold text-center mb-8">أنشطتنا</h3>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryImages.map((src, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              className="overflow-hidden rounded-xl shadow-md"
+            >
+              <Image
+                src={src}
+                alt={`نشاط ${idx + 1}`}
+                className="w-full h-60 object-cover hover:scale-105 transition"
+                width={500}
+                height={300}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+      {/* Contact Section */}
+      <ContactSection />
     </div>
   );
 }
