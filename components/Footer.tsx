@@ -6,7 +6,7 @@ import { blue_colors } from "@/lib/utils";
 
 export default function Footer() {
   return (
-    <footer className={`${blue_colors}  py-10 mt-16`}>
+    <footer className={`${blue_colors}  py-10 mt-16 px-[5%] `}>
       <div className="container mx-auto px-6 md:px-20 text-center">
         {/* Logo / Name */}
         <h3 className="text-2xl font-bold text-gray-800 mb-3">
@@ -15,7 +15,7 @@ export default function Footer() {
         <p className="text-gray-600 mb-6">حيث يبدأ التعلم بالمرح والإبداع ✨</p>
 
         {/* Links */}
-        <div className="flex justify-center gap-6 mb-6 text-sm md:text-base">
+        <div className="flex flex-wrap  justify-center gap-6 mb-6 text-sm md:text-base">
           <Link
             href="#about"
             className="text-gray-700 hover:text-blue-600 transition"
