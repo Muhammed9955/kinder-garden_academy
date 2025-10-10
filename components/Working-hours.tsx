@@ -5,17 +5,17 @@ import React from "react";
 import Section_title from "./Section_title";
 
 const days = [
-  { day: "الأحد", hours: "8:00 ص - 4:00 م" },
-  { day: "الإثنين", hours: "8:00 ص - 4:00 م" },
-  { day: "الثلاثاء", hours: "8:00 ص - 4:00 م" },
-  { day: "الأربعاء", hours: "8:00 ص - 4:00 م" },
-  { day: "الخميس", hours: "8:00 ص - 4:00 م" },
+  { day: "الأحد", hours: "7:00 ص - 7:00 م" },
+  { day: "الإثنين", hours: "7:00 ص - 7:00 م" },
+  { day: "الثلاثاء", hours: "7:00 ص - 7:00 م" },
+  { day: "الأربعاء", hours: "7:00 ص - 7:00 م" },
+  { day: "الخميس", hours: "7:00 ص - 7:00 م" },
   { day: "الجمعة", hours: "مغلق" },
   { day: "السبت", hours: "مغلق" },
 ];
 export default function Working_hours() {
   return (
-    <div id="working-hours" className="px-[5%] scroll-mt-20">
+    <div id="working-hours" className=" scroll-mt-20">
       <Section_title title="مواعيد العمل" />
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center my-4 mt-10">
         <div className="cols-1">

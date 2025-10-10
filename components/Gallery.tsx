@@ -22,7 +22,7 @@ const galleryImages = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className=" px-6 md:px-20 bg-white scroll-mt-20">
+    <section id="gallery" className="  bg-white scroll-mt-20">
       <Section_title title="معرض الصور" />
       <div className="mt-10" />
       <Swiper

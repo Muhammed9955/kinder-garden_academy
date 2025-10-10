@@ -45,7 +45,7 @@ const services = [
 ];
 export default function Services() {
   return (
-    <section id="services" className="  px-[5%] scroll-mt-20">
+    <section id="services" className="   scroll-mt-20">
       <Section_title title="خدماتنا" />
       <p className="text-2xl text-center mb-12 text-gray-600 max-w-2xl mx-auto">
         نقدم مجموعة متنوعة من الخدمات التعليمية والترفيهية.

@@ -22,7 +22,7 @@ const galleryImages = [
 
 export default function Adults_Courses() {
   return (
-    <section id="adults-courses" className=" px-6 md:px-20 bg-white scroll-mt-20">
+    <section id="adults-courses" className="  bg-white scroll-mt-20 ">
       <Section_title title="دورات تدريبة" />
       <div className="mt-10" />
       <Swiper

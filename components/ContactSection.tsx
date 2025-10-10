@@ -12,7 +12,7 @@ const ContactMap = dynamic(() => import("../app/ContactMap"), {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-16 px-6 md:px-20 scroll-mt-20">
+    <section id="contact" className="py-16 scroll-mt-20">
       <Section_title title="موقعنا" />
       <div className="mb-10" />
 

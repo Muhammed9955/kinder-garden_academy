@@ -44,6 +44,7 @@ export default function FullGallery() {
             </motion.div>
           ))}
       </div>
+      
     </section>
   );
 }
