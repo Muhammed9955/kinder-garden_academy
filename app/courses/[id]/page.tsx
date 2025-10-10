@@ -14,8 +14,8 @@ export default function Page() {
   return (
     <div className="max-w-5xl mx-auto  bg-gray-100 rounded-lg shadow-md my-10">
       <Image
-        src={course?.image}
-        alt={course?.title}
+        src={course?.image || "/placeholder.png"}
+        alt={course?.title || "Course Image"}
         width={800}
         height={400}
         className="w-full h-[50vh] md:h-[80vh] object-contain rounded-lg mb-6"
