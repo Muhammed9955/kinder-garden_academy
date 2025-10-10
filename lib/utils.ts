@@ -16,7 +16,7 @@ export const courses = [
     age: "2–5 سنوات",
     time: "5 ظهراً – 1 مساءا",
     capacity: "10 أطفال",
-    image: "/images/course01.jpg",
+    image: "/images/gallery-3.jpg",
     // image: "/images/math.webp",
   },
   {
@@ -76,14 +76,14 @@ export const courses = [
   },
   {
     id: "3",
-    title: "جلسات تخاطب",
+    title: "جلسات تنمية مهارات و تخاطب",
     old_price: "EGP 150.00",
     price: "EGP 75.00 ",
     description: `جلسات التخاطب لزياده اللغه عند الاطفال`,
     age: "2–4 سنوات",
     time: "9 – 11 صباحاً",
     capacity: "15 طفل",
-    image: "/images/courses-03.jfif",
+    image: "/images/gallery-12.jpg",
   },
   {
     id: "4",
